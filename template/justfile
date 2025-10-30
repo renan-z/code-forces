@@ -1,0 +1,20 @@
+# use powershell on Windows instead of `sh`
+set windows-powershell
+
+default:
+  @just --list
+
+create problem:
+  cargo generate --name problem-{{ problem }} --path ./p-template
+
+work problem:
+  cargo watch -w problem-{{ problem }} -x "check -p problem-{{ problem }}" -s "just test problem-{{ problem }}" -s "just lint problem-{{ problem }}"
+
+lint problem:
+  cargo clippy -p {{ problem }}
+
+test problem:
+  cargo nextest run -p {{ problem }}
+
+solve problem:
+  cargo run -p {{ problem }} --bin main --release

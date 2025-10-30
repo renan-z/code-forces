@@ -1,0 +1,6 @@
+[template]
+exclude = [ 
+  "justfile",
+  "p-template/src/bin/main.rs",
+  "p-template/Cargo.toml"
+]

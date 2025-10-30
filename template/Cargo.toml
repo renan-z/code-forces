@@ -1,0 +1,7 @@
+[workspace]
+members = []
+default-members = ["problem-*"]
+resolver = "3"
+
+[workspace.dependencies]
+rstest = "*"
