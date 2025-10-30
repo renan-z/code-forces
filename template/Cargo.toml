@@ -1,7 +1,8 @@
 [workspace]
-members = []
+members = ["problem-a"]
 default-members = ["problem-*"]
 resolver = "3"
 
 [workspace.dependencies]
+regex = "*"
 rstest = "*"
